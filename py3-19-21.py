@@ -1,3 +1,7 @@
+import random
+myList = []
+unique_list = []
+
   print("Hello, there! Let's work with lists!")
             print("Choose from the following options. Type a number below!")
             choice = input ("""1. Add to a list, or
@@ -6,8 +10,11 @@
     2. Add a bunch of numbers
     3. Return the value at an index
     4. Random search
-    5. Print contents of list
-    6. Exit program""")
+    5. Linear Search
+    6. Recursive Binary Search
+    7. Iterative Binary Search
+    8. Print contents of list
+    9. Exit program""")
             if choice == "1":
                 addToList()
             elif choice == "2":
@@ -19,6 +26,13 @@
             elif choice == "5"
                 linearSearch()
             elif choice == "6"
+                searchItem = input("What are you looking for?")
+                recursiveBinarySearch(unique_list, 0, len(unique_list)-1, int(searchItem)
+            elif choice == "7"
+                searchItem = input("What are you looking for?")
+                result = iterativeBinarySearch(unique_list, 0, len(unique_list)-1, int(searchItem)
+                                      
+            elif choice == "8"
                 print(myList)
             else:
                 break
@@ -40,8 +54,18 @@ def addABunch():
         myList.append(random.randint(0, int(numRange)))
     print("Your list is now complete.")
 
+def sortList(myList):
+    for x in myList:
+        if x not in unique_list:
+            unique_list.append(x)
+    unique_list.sort()
+    showMe = input("Wanna see your new list? Y/N")
+    if showMe.lower() == "y"
+        pring(unique_list)
+
 def randomSearch
     print("rAnDoM sEaRcH")
+    print(myList[random.randint(0, len(myList)-1)])
     
 
 def indexValues():
@@ -55,6 +79,38 @@ def linearSearch
     for x in range (len(myList)):
         if myList[x] == int(searchItem):
             print("Your item is at index position {}".format(x))
+
+def recursiveBinarySearch(unique_list, low, high, x):
+    if high >= low:
+        mid = (high+low) // 2
+
+        if unique_list[mid] == x:
+            print("You ding dang found it t index position {}".format(mid))
+            return mid
+        elif unique_list[mid] > x:
+            return recursiveBinarySearch(unique_list, low, mid -1 x)
+        else:
+            return recursiveBinarySearch(unique_list, mid + 1, high, x)
+    else:
+        print("Your number isn't here!")
+
+def iterativeBinarySearch(unique_list, x):
+    low = 0
+    high =len(unique_list)-1
+    mid = 0
+
+    while low <= high:
+        mid = (high + low) // 2
+
+        if unique_list[mid] < x:
+            low = mid + 1
+        elif unique_list[mid] > x:
+            high = mid - 1
+        else:
+            return mid
+    return -1
+    
+    
 
 
 #dunder main -> Double Underscore---dunder
